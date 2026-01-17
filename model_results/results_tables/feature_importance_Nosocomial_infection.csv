@@ -1,0 +1,80 @@
+feature,delta_mean_p1,abs_effect,direction,target
+ Operating time (min),0.2188647019681675,0.2188647019681675,+,Nosocomial infection
+ Type of surgical procedure 7.0,0.11494230051518778,0.11494230051518778,+,Nosocomial infection
+ Type of surgical procedure 17.0,0.11265501245587495,0.11265501245587495,+,Nosocomial infection
+ Tracheostomy,0.1037872128202301,0.1037872128202301,+,Nosocomial infection
+" Type of surgery (1=clean, 2=clean-contaminated) 2.0",0.10178188021248175,0.10178188021248175,+,Nosocomial infection
+ Stage,0.09228173206228352,0.09228173206228352,+,Nosocomial infection
+" Type of surgery (1=clean, 2=clean-contaminated) 1.0",-0.06611092152701217,0.06611092152701217,-,Nosocomial infection
+ ASA score,0.04733771146498006,0.04733771146498006,+,Nosocomial infection
+ Age at diagnosis,0.04647036690811279,0.04647036690811279,+,Nosocomial infection
+ BMI,-0.04504628300251612,0.04504628300251612,-,Nosocomial infection
+ T,0.03411305549108795,0.03411305549108795,+,Nosocomial infection
+ Significant weight loss? (0: no; 1: yes) 1.0,0.028143081278840965,0.028143081278840965,+,Nosocomial infection
+ Significant weight loss? (0: no; 1: yes) -1,-0.02111164680811367,0.02111164680811367,-,Nosocomial infection
+ Nasogastric tube,0.02089209946722298,0.02089209946722298,+,Nosocomial infection
+ Smoking (0: no; 1: yes; 2: ex) 1.0,-0.012765202341605442,0.012765202341605442,-,Nosocomial infection
+ Significant weight loss? (0: no; 1: yes) 0.0,0.012371782577432988,0.012371782577432988,+,Nosocomial infection
+ Type of surgical procedure 9.0,-0.01214368742173133,0.01214368742173133,-,Nosocomial infection
+ Previous radiotherapy on H&N discricts,-0.010064680680924976,0.010064680680924976,-,Nosocomial infection
+ Type of surgical procedure 5.0,-0.009831447750041966,0.009831447750041966,-,Nosocomial infection
+ Sex (0: male; 1: female),-0.00967266197229677,0.00967266197229677,-,Nosocomial infection
+ Smoking (0: no; 1: yes; 2: ex) 2.0,0.008840817064236617,0.008840817064236617,+,Nosocomial infection
+ Type of surgical procedure 3.0,-0.008251808964975293,0.008251808964975293,-,Nosocomial infection
+ Type of surgical procedure 10.0,-0.00784624472892309,0.00784624472892309,-,Nosocomial infection
+ 0: normal weight; 1: underweight; 2: overweight 2.0,-0.0076686492946848595,0.0076686492946848595,-,Nosocomial infection
+ PICC/CVC (0: no; 1: si),0.007542041138260791,0.007542041138260791,+,Nosocomial infection
+ Site ID 4,0.006953419600908117,0.006953419600908117,+,Nosocomial infection
+ Site ID 9,-0.00635285917364331,0.00635285917364331,-,Nosocomial infection
+ Type of surgical procedure 12.0,0.005676537142705107,0.005676537142705107,+,Nosocomial infection
+ Type of surgical procedure 6.0,-0.005233661100510656,0.005233661100510656,-,Nosocomial infection
+ Site ID 6,-0.004553523777997448,0.004553523777997448,-,Nosocomial infection
+ Type of surgical procedure 2.0,0.004042305128669432,0.004042305128669432,+,Nosocomial infection
+ Type of surgical procedure 4.0,0.003945028336774958,0.003945028336774958,+,Nosocomial infection
+ Type of surgical procedure 19.0,-0.0036329698780875885,0.0036329698780875885,-,Nosocomial infection
+ Type of surgical procedure 1.0,-0.003214951313471881,0.003214951313471881,-,Nosocomial infection
+ N,-0.002546698358523003,0.002546698358523003,-,Nosocomial infection
+ Site ID 5,0.0022410582697339754,0.0022410582697339754,+,Nosocomial infection
+" Alcohol (0: no; 1: yes, 2: ex) 0.0",-0.002034163318690496,0.002034163318690496,-,Nosocomial infection
+ Type of surgical procedure 16.0,-0.0018965055927378516,0.0018965055927378516,-,Nosocomial infection
+ Smoking (0: no; 1: yes; 2: ex) 0.0,0.00169106789205975,0.00169106789205975,+,Nosocomial infection
+ Type of surgical procedure 15.0,-0.0014325472293913455,0.0014325472293913455,-,Nosocomial infection
+ Site ID 16,-0.001310531715597918,0.001310531715597918,-,Nosocomial infection
+ Type of surgical procedure 18.0,0.0012668751636483733,0.0012668751636483733,+,Nosocomial infection
+ 0: normal weight; 1: underweight; 2: overweight 1.0,-0.00116087466285425,0.00116087466285425,-,Nosocomial infection
+ Type of surgical procedure 13.0,-0.001109411641358693,0.001109411641358693,-,Nosocomial infection
+ 0: normal weight; 1: underweight; 2: overweight 0.0,0.0007389627221751627,0.0007389627221751627,+,Nosocomial infection
+" Alcohol (0: no; 1: yes, 2: ex) 1.0",0.000631675600473669,0.000631675600473669,+,Nosocomial infection
+ Site ID 1,0.0006151916071894803,0.0006151916071894803,+,Nosocomial infection
+ Type of surgical procedure 8.0,-0.0005340317070628431,0.0005340317070628431,-,Nosocomial infection
+ Site ID 14,0.0005295369409055173,0.0005295369409055173,+,Nosocomial infection
+ Site ID 8,-0.0005016520006883018,0.0005016520006883018,-,Nosocomial infection
+ Site ID 15,-0.000285861351765504,0.000285861351765504,-,Nosocomial infection
+" Alcohol (0: no; 1: yes, 2: ex) 2.0",0.00010516138930172225,0.00010516138930172225,+,Nosocomial infection
+ Site ID 12,0.00010093533622634876,0.00010093533622634876,+,Nosocomial infection
+ Site ID 3,6.84138196588302e-06,6.84138196588302e-06,+,Nosocomial infection
+ COPD,0.0,0.0,-,Nosocomial infection
+ Type of surgical procedure 11.0,0.0,0.0,-,Nosocomial infection
+ Bronchial asthma,0.0,0.0,-,Nosocomial infection
+ Allergies,0.0,0.0,-,Nosocomial infection
+ Type of surgical procedure 14.0,0.0,0.0,-,Nosocomial infection
+ Cirrhosis,0.0,0.0,-,Nosocomial infection
+ CRI,0.0,0.0,-,Nosocomial infection
+ Previous chemotherapy,0.0,0.0,-,Nosocomial infection
+ Hypothyroidism,0.0,0.0,-,Nosocomial infection
+ Previous transplant,0.0,0.0,-,Nosocomial infection
+ Post-op PACU or ICU,0.0,0.0,-,Nosocomial infection
+ Free flap,0.0,0.0,-,Nosocomial infection
+ Pedicled flap,0.0,0.0,-,Nosocomial infection
+ Diabetes,0.0,0.0,-,Nosocomial infection
+ Prophylactic antibiotic therapy,0.0,0.0,-,Nosocomial infection
+ Antibiotic therapy during surgery,0.0,0.0,-,Nosocomial infection
+ Site ID 2,0.0,0.0,-,Nosocomial infection
+ Vascular comorbidities,0.0,0.0,-,Nosocomial infection
+ Site ID 7,0.0,0.0,-,Nosocomial infection
+ Previous corticosteroid therapy,0.0,0.0,-,Nosocomial infection
+ Site ID 11,0.0,0.0,-,Nosocomial infection
+ Site ID 13,0.0,0.0,-,Nosocomial infection
+ Previous immunosuppressive therapy,0.0,0.0,-,Nosocomial infection
+ High blood pressure,0.0,0.0,-,Nosocomial infection
+ Site ID 10,0.0,0.0,-,Nosocomial infection
