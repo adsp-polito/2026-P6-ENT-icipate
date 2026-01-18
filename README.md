@@ -11,6 +11,7 @@ The models uses demographic (e.g., age, sex, weight), preoperative, and perioper
 
 ---
 
+
 ## Problem Formulation
 
 This is framed as a binary classification problem, with strong class imbalance reflecting the real-world rarity of these complications. The model estimates the probability that a patient will develop either a pharyngo-/oro-cutaneous fistula or a nosocomial infection after surgery, based on the available clinical and demographic variables. Since missing a true complication (false negative) is considered more harmful than a false positive, the modeling objective emphasizes recall and F1-score for the positive class.
