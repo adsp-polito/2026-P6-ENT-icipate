@@ -1,0 +1,80 @@
+feature,delta_mean_p1,abs_effect,direction,target
+ Operating time (min),0.1180645827503562,0.1180645827503562,+,Pharyngo-/oro-cutaneous fistula
+ Type of surgical procedure 8.0,0.11684900547927188,0.11684900547927188,+,Pharyngo-/oro-cutaneous fistula
+ PICC/CVC (0: no; 1: si),0.06263528596581594,0.06263528596581594,+,Pharyngo-/oro-cutaneous fistula
+ Type of surgical procedure 16.0,0.0422190621790986,0.0422190621790986,+,Pharyngo-/oro-cutaneous fistula
+ Stage,0.040140933684960994,0.040140933684960994,+,Pharyngo-/oro-cutaneous fistula
+ T,0.03782147495728708,0.03782147495728708,+,Pharyngo-/oro-cutaneous fistula
+ Tracheostomy,0.03279231401899024,0.03279231401899024,+,Pharyngo-/oro-cutaneous fistula
+ Type of surgical procedure 13.0,0.02917922781420365,0.02917922781420365,+,Pharyngo-/oro-cutaneous fistula
+ Site ID 3,-0.02548866500317079,0.02548866500317079,-,Pharyngo-/oro-cutaneous fistula
+ ASA score,0.023992771005603097,0.023992771005603097,+,Pharyngo-/oro-cutaneous fistula
+ Significant weight loss? (0: no; 1: yes) 1.0,0.02287709019844672,0.02287709019844672,+,Pharyngo-/oro-cutaneous fistula
+ Site ID 5,0.02165507724520349,0.02165507724520349,+,Pharyngo-/oro-cutaneous fistula
+ N,-0.02043910288050732,0.02043910288050732,-,Pharyngo-/oro-cutaneous fistula
+ Type of surgical procedure 10.0,-0.018543427602711077,0.018543427602711077,-,Pharyngo-/oro-cutaneous fistula
+ Type of surgical procedure 7.0,-0.015718430363531016,0.015718430363531016,-,Pharyngo-/oro-cutaneous fistula
+ BMI,-0.014063882226635016,0.014063882226635016,-,Pharyngo-/oro-cutaneous fistula
+ Site ID 4,0.012627076561338851,0.012627076561338851,+,Pharyngo-/oro-cutaneous fistula
+ Site ID 11,0.011377999697680746,0.011377999697680746,+,Pharyngo-/oro-cutaneous fistula
+ 0: normal weight; 1: underweight; 2: overweight 1.0,-0.011193873656569764,0.011193873656569764,-,Pharyngo-/oro-cutaneous fistula
+ Type of surgical procedure 9.0,-0.011014220408130548,0.011014220408130548,-,Pharyngo-/oro-cutaneous fistula
+ High blood pressure,-0.010359073766370436,0.010359073766370436,-,Pharyngo-/oro-cutaneous fistula
+ Type of surgical procedure 3.0,0.009714484390921208,0.009714484390921208,+,Pharyngo-/oro-cutaneous fistula
+ Previous radiotherapy on H&N discricts,-0.009264585895999239,0.009264585895999239,-,Pharyngo-/oro-cutaneous fistula
+ Type of surgical procedure 19.0,-0.008175334357563208,0.008175334357563208,-,Pharyngo-/oro-cutaneous fistula
+" Type of surgery (1=clean, 2=clean-contaminated) 2.0",0.008066807773176754,0.008066807773176754,+,Pharyngo-/oro-cutaneous fistula
+ Type of surgical procedure 5.0,-0.008009592261877474,0.008009592261877474,-,Pharyngo-/oro-cutaneous fistula
+ Age at diagnosis,-0.0076699103514564215,0.0076699103514564215,-,Pharyngo-/oro-cutaneous fistula
+ Site ID 6,0.007641207950683543,0.007641207950683543,+,Pharyngo-/oro-cutaneous fistula
+ Site ID 1,-0.007256743468664312,0.007256743468664312,-,Pharyngo-/oro-cutaneous fistula
+ Nasogastric tube,0.006884882944909021,0.006884882944909021,+,Pharyngo-/oro-cutaneous fistula
+ Type of surgical procedure 17.0,-0.006417821324944839,0.006417821324944839,-,Pharyngo-/oro-cutaneous fistula
+" Alcohol (0: no; 1: yes, 2: ex) 2.0",0.006399580462966237,0.006399580462966237,+,Pharyngo-/oro-cutaneous fistula
+ Significant weight loss? (0: no; 1: yes) -1,-0.0061842553747928075,0.0061842553747928075,-,Pharyngo-/oro-cutaneous fistula
+ Smoking (0: no; 1: yes; 2: ex) 1.0,0.0058754791651537686,0.0058754791651537686,+,Pharyngo-/oro-cutaneous fistula
+ Type of surgical procedure 2.0,0.0057285332900415264,0.0057285332900415264,+,Pharyngo-/oro-cutaneous fistula
+ Type of surgical procedure 6.0,-0.005680347232241534,0.005680347232241534,-,Pharyngo-/oro-cutaneous fistula
+" Alcohol (0: no; 1: yes, 2: ex) 0.0",-0.005158456074648793,0.005158456074648793,-,Pharyngo-/oro-cutaneous fistula
+ Smoking (0: no; 1: yes; 2: ex) 2.0,-0.00513504560544617,0.00513504560544617,-,Pharyngo-/oro-cutaneous fistula
+ Significant weight loss? (0: no; 1: yes) 0.0,0.005126651393107445,0.005126651393107445,+,Pharyngo-/oro-cutaneous fistula
+ Site ID 9,-0.0046810269504958535,0.0046810269504958535,-,Pharyngo-/oro-cutaneous fistula
+ Type of surgical procedure 14.0,0.004584968735675737,0.004584968735675737,+,Pharyngo-/oro-cutaneous fistula
+" Type of surgery (1=clean, 2=clean-contaminated) 1.0",-0.004161535953511569,0.004161535953511569,-,Pharyngo-/oro-cutaneous fistula
+ Type of surgical procedure 1.0,-0.004118526286967322,0.004118526286967322,-,Pharyngo-/oro-cutaneous fistula
+ Sex (0: male; 1: female),-0.004032934672521776,0.004032934672521776,-,Pharyngo-/oro-cutaneous fistula
+ 0: normal weight; 1: underweight; 2: overweight 0.0,0.004002571188337134,0.004002571188337134,+,Pharyngo-/oro-cutaneous fistula
+ Type of surgical procedure 18.0,-0.0036378084713319103,0.0036378084713319103,-,Pharyngo-/oro-cutaneous fistula
+ Site ID 8,-0.0034193082036044486,0.0034193082036044486,-,Pharyngo-/oro-cutaneous fistula
+ Smoking (0: no; 1: yes; 2: ex) 0.0,-0.0029288747328821696,0.0029288747328821696,-,Pharyngo-/oro-cutaneous fistula
+" Alcohol (0: no; 1: yes, 2: ex) 1.0",0.0012932420494100316,0.0012932420494100316,+,Pharyngo-/oro-cutaneous fistula
+ Type of surgical procedure 15.0,-0.0012440488476092304,0.0012440488476092304,-,Pharyngo-/oro-cutaneous fistula
+ Site ID 7,-0.0012107667430414637,0.0012107667430414637,-,Pharyngo-/oro-cutaneous fistula
+ Type of surgical procedure 11.0,-0.0010165752924850835,0.0010165752924850835,-,Pharyngo-/oro-cutaneous fistula
+ Type of surgical procedure 4.0,0.0009792570688748892,0.0009792570688748892,+,Pharyngo-/oro-cutaneous fistula
+ 0: normal weight; 1: underweight; 2: overweight 2.0,0.0002910435954896762,0.0002910435954896762,+,Pharyngo-/oro-cutaneous fistula
+ Type of surgical procedure 12.0,-0.00026214177978889364,0.00026214177978889364,-,Pharyngo-/oro-cutaneous fistula
+ Bronchial asthma,0.0,0.0,-,Pharyngo-/oro-cutaneous fistula
+ Vascular comorbidities,0.0,0.0,-,Pharyngo-/oro-cutaneous fistula
+ Hypothyroidism,0.0,0.0,-,Pharyngo-/oro-cutaneous fistula
+ CRI,0.0,0.0,-,Pharyngo-/oro-cutaneous fistula
+ COPD,0.0,0.0,-,Pharyngo-/oro-cutaneous fistula
+ Previous corticosteroid therapy,0.0,0.0,-,Pharyngo-/oro-cutaneous fistula
+ Cirrhosis,0.0,0.0,-,Pharyngo-/oro-cutaneous fistula
+ Allergies,0.0,0.0,-,Pharyngo-/oro-cutaneous fistula
+ Previous immunosuppressive therapy,0.0,0.0,-,Pharyngo-/oro-cutaneous fistula
+ Site ID 15,0.0,0.0,-,Pharyngo-/oro-cutaneous fistula
+ Previous transplant,0.0,0.0,-,Pharyngo-/oro-cutaneous fistula
+ Diabetes,0.0,0.0,-,Pharyngo-/oro-cutaneous fistula
+ Post-op PACU or ICU,0.0,0.0,-,Pharyngo-/oro-cutaneous fistula
+ Site ID 16,0.0,0.0,-,Pharyngo-/oro-cutaneous fistula
+ Previous chemotherapy,0.0,0.0,-,Pharyngo-/oro-cutaneous fistula
+ Free flap,0.0,0.0,-,Pharyngo-/oro-cutaneous fistula
+ Pedicled flap,0.0,0.0,-,Pharyngo-/oro-cutaneous fistula
+ Prophylactic antibiotic therapy,0.0,0.0,-,Pharyngo-/oro-cutaneous fistula
+ Antibiotic therapy during surgery,0.0,0.0,-,Pharyngo-/oro-cutaneous fistula
+ Site ID 2,0.0,0.0,-,Pharyngo-/oro-cutaneous fistula
+ Site ID 12,0.0,0.0,-,Pharyngo-/oro-cutaneous fistula
+ Site ID 13,0.0,0.0,-,Pharyngo-/oro-cutaneous fistula
+ Site ID 14,0.0,0.0,-,Pharyngo-/oro-cutaneous fistula
+ Site ID 10,0.0,0.0,-,Pharyngo-/oro-cutaneous fistula
