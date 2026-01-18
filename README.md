@@ -2,18 +2,18 @@
 
 ## Project Overview
 
-**ENT-icipate** is a clinical project developed in collaboration with Molinette Hospital and LINKS Foundation. The aim is to predict two major post-surgical complications in patients undergoing ENT (Ear-Nose-Throat) tumor removal surgery using machine learning models:
+**ENT-icipate** is a clinical project developed in collaboration with Molinette Hospital and supervised by LINKS Foundation. The aim is to predict two major post-surgical complications in patients undergoing ENT (Ear-Nose-Throat) tumor removal surgery using machine learning models:
 
 - **Pharyngo-/oro-cutaneous fistula**
 - **Nosocomial infection**
 
-By leveraging preoperative and perioperative clinical data, the models estimate the probability of complications, supporting clinicians in risk stratification, early intervention, and resource planning. The project adopts a safety-first approach, prioritizing sensitivity to ensure high-risk patients are identified.
+The models uses demographic (e.g., age, sex, weight), preoperative, and perioperative clinical data to estimate each patient’s risk of complications. This supports clinicians in risk stratification, early intervention, and resource planning. The project adopts a safety-first strategy, prioritizing sensitivity to ensure that high-risk patients are identified.
 
 ---
 
 ## Problem Formulation
 
-The task is formulated as a binary classification problem, complicated by the rarity of the target complications (strong class imbalance). Given a set of pre-operative and peri-operative clinical variables, the model estimates the probability that a patient will develop either a pharyngo-/oro-cutaneous fistula or a nosocomial infection after surgery. Missing a true complication (false negative) is considered more harmful than a false positive, so the modeling objective emphasizes recall and F1-score for the positive class.
+This is framed as a binary classification problem, with strong class imbalance reflecting the real-world rarity of these complications. The model estimates the probability that a patient will develop either a pharyngo-/oro-cutaneous fistula or a nosocomial infection after surgery, based on the available clinical and demographic variables. Since missing a true complication (false negative) is considered more harmful than a false positive, the modeling objective emphasizes recall and F1-score for the positive class.
 
 ---
 
@@ -28,16 +28,17 @@ The dataset consists of clinical records from 574 patients who underwent ENT onc
 
 Two binary target variables are considered: pharyngo-/oro-cutaneous fistula and nosocomial infection.
 
+*Note: The dataset (`Dataset_ENTicipate.xlsx`) is not included for privacy reasons.*
+
 ---
 
 ## Data Preprocessing
 
-The dataset exhibits heterogeneity in feature encoding, missing values, and redundancy. The preprocessing pipeline includes:
+The preprocessing pipeline includes:
 
 - Detection and imputation of missing values (numerical and categorical)
 - Standardization and encoding of categorical variables
 - Correlation analysis and removal of highly correlated/redundant variables
-- Consistent application of preprocessing across training, validation, and test sets to avoid information leakage
 
 ---
 
@@ -54,23 +55,19 @@ Both complications are rare events, resulting in a strongly imbalanced class dis
 ## Workflow
 
 1. **Data Preparation:**  
-   The dataset was cleaned, missing values were imputed, categorical variables were encoded, and redundant features were removed to ensure data quality and consistency.
-
+   Data cleaning, imputation and feature selection.
 2. **Model Development:**  
-   Several machine learning models were trained (Logistic Regression, Random Forest, XGBoost, CatBoost). Hyperparameters were tuned using cross-validation, and the best models were selected based on PR-AUC and F1-score.
-
+   everal machine learning models were trained (Logistic Regression, Random Forest, XGBoost, CatBoost). Hyperparameters were tuned using cross-validation, and the best models were selected based F1-score
 3. **Evaluation:**  
-   The models were evaluated on a held-out test set. Performance metrics (F1, PR-AUC) were computed for both complications, with a focus on sensitivity and performance on the minority (positive) class.
-
+   Assessment on a held-out test set using F1, PR-AUC, and other metrics.
 4. **Interpretability:**  
-   Model interpretability was addressed using multiple approaches:
-   - **SHAP values** to identify the most important features influencing predictions for each complication, providing clinical insight into risk factors.
-   - **Feature importance rankings** from tree-based models to highlight the most relevant variables globally.
-   - **Analysis of decision thresholds** to understand the trade-off between sensitivity and specificity, supporting a safety-first clinical strategy.
+   - **SHAP values** for feature importance and patient-level explanations.
+   - **Signed Effect** for actionable insights, i.e. how changing a single feature affects the predicted ris
+   - **Threshold analysis** to understand the trade-off between sensitivity and specificity, supporting a safety-first clinical strategy.
 
 ---
 
-## Folder Structure and Contents
+## Folder Structure
 
 ```
 adsp_notebook.ipynb
@@ -82,91 +79,99 @@ report/
 Checkpoints/
 ```
 
-- **adsp_notebook.ipynb**  
-  The main Jupyter notebook containing all code, data analysis, model training, evaluation, and interpretability steps.
+- **adsp_notebook.ipynb**: Main notebook with code, analysis, and results.
+- **model_results/**: Output directory for all results.
+  - **plots/**: 
+    - SHAP feature importance bar plots (`*_shap_bar.png`)
+    - Beeswarm plots (`*_shap_beeswarm.png`)
+    - Dependence plots (`*_shap_dependence.png`)
+    - Signed Effect plots (`*_signed_effect.png`)
+    - PR-AUC and ROC-AUC curves (`*_pr_roc_curves.png`)
+  - **results_tables/**: 
+    - Model performance summaries (`val_best_summary.csv`, `test_best_summary.csv`, `val_all_models.csv`)
+    - Feature importance tables (`feature_importance_{target}.csv`)
+    - Per-threshold metrics for each model (`{target}_{model}_val_metrics_by_threshold.csv`)
+    - SHAP values per sample (`shap_values_{target}.csv`)
 
-- **README.md**  
-  Provides an overview of the project, instructions, and documentation.
-
-- **model_results/**  
-  Output directory containing all results generated by the notebook.  
-  - **plots/**  
-    SHAP feature importance bar plots (`*_shap_bar.png`)
-  - **results_tables/**  
-    Tabular results in CSV format, including:
-      - Model performance summaries (`val_best_summary.csv`, `test_best_summary.csv`, `val_all_models.csv`)
-      - Feature importance tables (`feature_importance_{target}.csv`)
-      - Per-threshold metrics for each model (`{target}_{model}_val_metrics_by_threshold.csv`)
-
-- **report/**  
-  Folder for the final project report and any additional documentation.
-
-- **Checkpoints/**  
-  Contains project presentations and slides (ppt files) produced during the development and review phases.
+- **report/**: Final project report and documentation.
+- **Checkpoints/**: Presentations slides.
+- **README.md**: Provides an overview of the project, instructions, and documentation.
 
 ---
 
 ## Input
 
-- **Dataset**: `Dataset_ENTicipate.xlsx` (not included for privacy)
-    - 574 patients (2002–2023), clinical and surgical variables
-    - Features include: age, comorbidities, TNM staging, type of surgery, perioperative parameters, and more.
+- **Dataset**: `Dataset_ENTicipate.xlsx` (not included)
+    - 574 patients (2002–2023), 64 features (demographics, comorbidities, TNM staging, surgery details, etc.)
 
 ---
 
 ## Output
 
-The model predicts, for each patient, the probability and final class (0 = no complication, 1 = complication) for both target complications.  
-The predicted class is obtained by applying an optimized threshold to the model output.
-
-All results, including predictions and evaluation metrics, are saved in the `model_results/` directory:
-
-- **results_tables/**: CSV files with metrics, optimal thresholds, feature importance, and predicted classes
-- **plots/**: SHAP feature importance plots for each target
+- **Predictions**: Final class (0 = no complication, 1 = complication) for both target complications per patient.
+- **Results**: Saved in `model_results/`
 ---
 
 ## How to Use
 
 1. Open `adsp_notebook.ipynb` in Jupyter or VSCode.
-2. Install required dependencies:  
-   `scikit-learn`, `xgboost`, `catboost`, `imblearn`, `shap`, `matplotlib`, `seaborn`, `pandas`, `numpy`.
-3. Place `Dataset_ENTicipate.xlsx` in the same folder as the notebook.
-4. Run all cells in order. Results will be saved in `model_results/` and displayed in the notebook.
+2. Place `Dataset_ENTicipate.xlsx` in the same folder as the notebook.
+3. Run all cells in order. Results will be saved in `model_results/` and displayed in the notebook.
 
 ---
 
 ## Main Results
 
+The table below summarizes the test set performance of the best models for each complication.  
+- **F1_pos**: Harmonic mean of precision and recall for the positive class (complication). Higher values indicate better balance between sensitivity and precision.
+- **PR-AUC**: Area under the Precision-Recall curve, particularly informative for imbalanced datasets.
+- **Optimal Threshold**: The probability cutoff selected to maximize F1 on the validation set, used for final predictions.
+
+
 | Target                  | Best Model     | F1_pos (test) | PR-AUC (test) | Optimal Threshold |
 |-------------------------|---------------|---------------|---------------|------------------|
-| Fistula                 | RandomForest  | 0.476         | 0.329         | 0.43             |
-| Nosocomial infection    | CatBoost      | 0.653         | 0.618         | 0.43             |
+| Fistula                 | RandomForest  | 0.522         | 0.330         | 0.42             |
+| Nosocomial infection    | CatBoost      | 0.653         | 0.603         | 0.38             |
 
 ---
 
-## Example Plots
+## Explainability of the results on the test set for the 2 best models and interpletation
 
-#### SHAP Feature Importance (Top 15) – Fistula
+#### SHAP Beeswarm Plot – Fistula
 
-![SHAP Bar Fistula](model_results/plots/Pharyngo-_oro-cutaneous_fistula_RandomForest_shap_bar.png)
+![SHAP Beeswarm Fistula](model_results/plots/Pharyngo-_oro-cutaneous_fistula_RandomForest_shap_beeswarm.png)
 
-#### SHAP Feature Importance (Top 15) – Nosocomial Infection
+#### SHAP Beeswarm Plot – Nosocomial Infection
 
-![SHAP Bar Infection](model_results/plots/Nosocomial_infection_CatBoost_shap_bar.png)
+![SHAP Beeswarm Infection](model_results/plots/Nosocomial_infection_CatBoost_shap_beeswarm.png)
+
+*Each dot represents a patient: the horizontal position shows how much that feature increases or decreases the predicted risk for that individual. The color indicates the feature value (red = high, blue = low).  
+For example, in the fistula plot, longer operating times (red dots on the right) consistently increase risk, while lower values (blue dots) decrease it.  
+Beeswarm plots reveal both average importance and the heterogeneity of feature effects across patients.*
+ 
+#### PR-AUC and ROC-AUC Curves
+
+![PR-ROC Fistula](model_results/plots/Pharyngo-_oro-cutaneous_fistula_RandomForest_pr_roc_curves.png)
+![PR-ROC Infection](model_results/plots/Nosocomial_infection_CatBoost_pr_roc_curves.png)
+
+*The PR-AUC (Precision-Recall Area Under Curve) and ROC-AUC (Receiver Operating Characteristic Area Under Curve) curves summarize the model’s ability to distinguish between patients with and without complications.  
+In each plot, the **red dot marks the optimal threshold** selected during validation (i.e., the probability cutoff that maximizes the F1-score for the positive class).  
+This threshold represents the operating point used for final predictions, and allows clinicians to see the trade-off between sensitivity and specificity at the chosen cutoff.  
+PR-AUC is particularly informative for imbalanced datasets, as it focuses on the model’s performance for the positive (minority) class. ROC-AUC provides an overall measure of discrimination across all thresholds.*
 
 ---
 
-## Interpretation
+# Reproducibility
 
-- **SHAP plots** show which features most influence the model’s prediction for each patient, helping clinicians understand the main risk factors for each complication.
-- The results highlight the most relevant clinical variables and support transparent, explainable AI in healthcare.
+Random seeds are set in the notebook for reproducibility. Results may vary slightly depending on hardware and library versions.
 
----
+--
 
-## Clinical Relevance & Limitations
+## Limitations & Future Work
 
-- The models provide a probability estimate for each complication, supporting clinicians in identifying high-risk patients and optimizing perioperative management.
-- Results are validated on the internal test split. 
+- The dataset is from a single center and limited in size.
+- No external validation set has been used.
+- Future work: test on external datasets, integrate additional clinical variables, and explore advanced explainability methods.
 
 ---
 
