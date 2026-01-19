@@ -29,6 +29,8 @@ The dataset consists of clinical records from 574 patients who underwent ENT onc
 
 Two binary target variables are considered: pharyngo-/oro-cutaneous fistula and nosocomial infection.
 
+![Target Variable Distribution](model_results/plots/target_variable_distribution.png)
+
 *Note: The dataset (`Dataset_ENTicipate.xlsx`) is not included for privacy reasons.*
 
 ---
