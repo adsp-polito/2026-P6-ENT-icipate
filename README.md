@@ -77,37 +77,6 @@ Both complications are rare events, resulting in a strongly imbalanced class dis
    - **Additional plots - Signed Effect** for actionable insights, i.e. how changing a single feature affects the predicted class for each target
 ---
 
-## Folder Structure
-
-```
-adsp_notebook.ipynb
-README.md
-model_results/
-    plots/
-    results_tables/
-report/
-Checkpoints/
-```
-
-- **adsp_notebook.ipynb**: Main notebook with code, analysis, and results.
-- **model_results/**: Output directory for all results.
-  - **plots/**: 
-    - SHAP feature importance bar plots (`*_shap_bar.png`)
-    - Beeswarm plots (`*_shap_beeswarm.png`)
-    - Dependence plots (`*_shap_dependence.png`)
-    - Signed Effect plots (`*_signed_effect.png`)
-    - PR-AUC and ROC-AUC curves (`*_pr_roc_curves.png`)
-  - **results_tables/**: 
-    - Model performance summaries (`val_best_summary.csv`, `test_best_summary.csv`, `val_all_models.csv`)
-    - Feature importance tables (`feature_importance_{target}.csv`)
-    - Per-threshold metrics for each model (`{target}_{model}_val_metrics_by_threshold.csv`)
-    - SHAP values per sample (`shap_values_{target}.csv`)
-
-- **report/**: Final project report and documentation.
-- **Checkpoints/**: Presentations slides.
-- **README.md**: Provides an overview of the project, instructions, and documentation.
-
----
 
 ## Input
 
@@ -120,14 +89,6 @@ Checkpoints/
 
 - **Predictions**: Final class (0 = no complication, 1 = complication) for both target complications per patient.
 - **Results**: Saved in `model_results/`
----
-
-## How to Use
-
-1. Open `adsp_notebook.ipynb` in Jupyter or VSCode.
-2. Place `Dataset_ENTicipate.xlsx` in the same folder as the notebook.
-3. Run all cells in order. Results will be saved in `model_results/` and displayed in the notebook.
-
 ---
 
 ## Main Results
@@ -174,6 +135,46 @@ The red dot marks the threshold optimized on the validation set (maximizing F1-s
 These plots demonstrate model performance on the test set using the threshold selected during validation, providing an unbiased evaluation.*
 
 > **Note:** All results and thresholds refer to the test set; the optimal threshold was selected on the validation set and then applied to the test set.
+
+---
+
+## Folder Structure
+
+```
+adsp_notebook.ipynb
+README.md
+model_results/
+    plots/
+    results_tables/
+report/
+Checkpoints/
+```
+
+- **adsp_notebook.ipynb**: Main notebook with code, analysis, and results.
+- **model_results/**: Output directory for all results.
+  - **plots/**: 
+    - SHAP feature importance bar plots (`*_shap_bar.png`)
+    - Beeswarm plots (`*_shap_beeswarm.png`)
+    - Dependence plots (`*_shap_dependence.png`)
+    - Signed Effect plots (`*_signed_effect.png`)
+    - PR-AUC and ROC-AUC curves (`*_pr_roc_curves.png`)
+  - **results_tables/**: 
+    - Model performance summaries (`val_best_summary.csv`, `test_best_summary.csv`, `val_all_models.csv`)
+    - Feature importance tables (`feature_importance_{target}.csv`)
+    - Per-threshold metrics for each model (`{target}_{model}_val_metrics_by_threshold.csv`)
+    - SHAP values per sample (`shap_values_{target}.csv`)
+
+- **report/**: Final project report and documentation.
+- **Checkpoints/**: Presentations slides.
+- **README.md**: Provides an overview of the project, instructions, and documentation.
+
+---
+
+## How to Use
+
+1. Open `adsp_notebook.ipynb` in Jupyter or VSCode.
+2. Place `Dataset_ENTicipate.xlsx` in the same folder as the notebook.
+3. Run all cells in order. Results will be saved in `model_results/` and displayed in the notebook.
 
 ---
 
