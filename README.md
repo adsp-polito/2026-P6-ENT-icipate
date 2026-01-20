@@ -178,7 +178,7 @@ Checkpoints/
 
 ---
 
-# Reproducibility
+## Reproducibility
 
 Random seeds are set in the notebook for reproducibility. Results may vary slightly depending on hardware and library versions.
 
