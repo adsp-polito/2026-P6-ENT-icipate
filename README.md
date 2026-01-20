@@ -33,6 +33,16 @@ Two binary target variables are considered: pharyngo-/oro-cutaneous fistula and 
 
 ---
 
+## Target Variable Distribution
+
+The following figure shows the distribution of the two target variables (Pharyngo-/oro-cutaneous fistula and Nosocomial infection) in the dataset. This highlights the strong class imbalance, with complications being rare events compared to the majority of cases with no complication.
+
+![Target Variable Distribution](model_results/plots/target_variable_distribution.png)
+
+*The plot displays the count of positive and negative cases for each complication. The pronounced imbalance motivates the use of recall, F1-score, and PR-AUC as main evaluation metrics, and justifies the adoption of a safety-first threshold optimization strategy.*
+
+---
+
 ## Data Preprocessing
 
 The preprocessing pipeline includes:
@@ -48,7 +58,7 @@ The preprocessing pipeline includes:
 Both complications are rare events, resulting in a strongly imbalanced class distribution. To address this:
 
 - Stratified data splitting preserves class proportions across training, validation, and test sets
-- Model evaluation focuses on minority-class metrics: recall, F1-score, and PR-AUC
+- Model evaluation focuses on minority-class metrics: recall, F1-score, and PR-AUC, ROC-AUC
 - Threshold optimization prioritizes recall and F1-score for the positive class, minimizing false negatives
 
 ---
@@ -63,9 +73,8 @@ Both complications are rare events, resulting in a strongly imbalanced class dis
    Assessment on a held-out test set using F1, PR-AUC, and other metrics.
 4. **Interpretability:**  
    - **SHAP values** for feature importance and patient-level explanations.
-   - **Signed Effect** for actionable insights, i.e. how changing a single feature affects the predicted ris
    - **Threshold analysis** to understand the trade-off between sensitivity and specificity, supporting a safety-first clinical strategy.
-
+   - **Additional plots - Signed Effect** for actionable insights, i.e. how changing a single feature affects the predicted class for each target
 ---
 
 ## Folder Structure
@@ -123,16 +132,22 @@ Checkpoints/
 
 ## Main Results
 
-The table below summarizes the test set performance of the best models for each complication.  
-- **F1_pos**: Harmonic mean of precision and recall for the positive class (complication). Higher values indicate better balance between sensitivity and precision.
-- **PR-AUC**: Area under the Precision-Recall curve, particularly informative for imbalanced datasets.
-- **Optimal Threshold**: The probability cutoff selected to maximize F1 on the validation set, used for final predictions.
+The table below summarizes the test set performance of the best models for each complication. All metrics are computed at the optimal threshold selected on the validation set.
 
+| **Target**                    | **Best Model** | **Threshold** | **Accuracy** | **Precision** | **Recall (Sensitivity)** | **F1-score** | **PR-AUC** | **ROC-AUC** |
+|-------------------------------|---------------|---------------|--------------|---------------|-------------------------|--------------|------------|-------------|
+| Pharyngo-/oro-cutaneous fistula | RandomForest  | 0.42          | 0.87         | 0.38          | 0.86                    | 0.52         | 0.33       | 0.87        |
+| Nosocomial infection           | CatBoost      | 0.38          | 0.80         | 0.57          | 0.76                    | 0.65         | 0.60       | 0.80        |
 
-| Target                  | Best Model     | F1_pos (test) | PR-AUC (test) | Optimal Threshold |
-|-------------------------|---------------|---------------|---------------|------------------|
-| Fistula                 | RandomForest  | 0.522         | 0.330         | 0.42             |
-| Nosocomial infection    | CatBoost      | 0.653         | 0.603         | 0.38             |
+**Metric definitions:**
+- **Accuracy:** Overall proportion of correct predictions.
+- **Precision:** Proportion of predicted complications that are true (controls false positives).
+- **Recall (Sensitivity):** Proportion of true complications correctly identified (minimizes false negatives).
+- **F1-score:** Harmonic mean of precision and recall for the positive class.
+- **PR-AUC:** Area under the Precision-Recall curve, primary metric for imbalanced data.
+- **ROC-AUC:** Area under the ROC curve, overall discrimination ability.
+
+*All results refer to the held-out test set. The optimal threshold was selected on the validation set to maximize F1-score for the positive class, then applied to the test set for final predictions.*
 
 ---
 
@@ -150,15 +165,16 @@ The table below summarizes the test set performance of the best models for each 
 For example, in the fistula plot, longer operating times (red dots on the right) consistently increase risk, while lower values (blue dots) decrease it.  
 Beeswarm plots reveal both average importance and the heterogeneity of feature effects across patients.*
  
-#### PR-AUC and ROC-AUC Curves
+#### PR-AUC and ROC-AUC Curves (Test Set)
 
-![PR-ROC Fistula](model_results/plots/Pharyngo-_oro-cutaneous_fistula_RandomForest_pr_roc_curves.png)
-![PR-ROC Infection](model_results/plots/Nosocomial_infection_CatBoost_pr_roc_curves.png)
+![PR-ROC Fistula](model_results/plots/Pharyngo-_oro-cutaneous_fistula_RandomForest_test_pr_roc_curves.png)
+![PR-ROC Infection](model_results/plots/Nosocomial_infection_CatBoost_test_pr_roc_curves.png)
 
-*The PR-AUC (Precision-Recall Area Under Curve) and ROC-AUC (Receiver Operating Characteristic Area Under Curve) curves summarize the model’s ability to distinguish between patients with and without complications.  
-In each plot, the **red dot marks the optimal threshold** selected during validation (i.e., the probability cutoff that maximizes the F1-score for the positive class).  
-This threshold represents the operating point used for final predictions, and allows clinicians to see the trade-off between sensitivity and specificity at the chosen cutoff.  
-PR-AUC is particularly informative for imbalanced datasets, as it focuses on the model’s performance for the positive (minority) class. ROC-AUC provides an overall measure of discrimination across all thresholds.*
+*PR-AUC and ROC-AUC curves illustrate the models’ ability to distinguish between patients with and without complications.  
+The red dot marks the threshold optimized on the validation set (maximizing F1-score), and the orange dot shows the default threshold (0.5).  
+These plots demonstrate model performance on the test set using the threshold selected during validation, providing an unbiased evaluation.*
+
+> **Note:** All results and thresholds refer to the test set; the optimal threshold was selected on the validation set and then applied to the test set.
 
 ---
 
@@ -166,7 +182,7 @@ PR-AUC is particularly informative for imbalanced datasets, as it focuses on the
 
 Random seeds are set in the notebook for reproducibility. Results may vary slightly depending on hardware and library versions.
 
---
+---
 
 ## Limitations & Future Work
 
