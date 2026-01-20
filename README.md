@@ -35,7 +35,7 @@ Two binary target variables are considered: pharyngo-/oro-cutaneous fistula and 
 
 ## Target Variable Distribution
 
-The following figure shows the distribution of the two target variables (Pharyngo-/oro-cutaneous fistula and Nosocomial infection) in the dataset. This highlights the strong class imbalance, with complications being rare events compared to the majority of cases with no complication.
+The following figure shows the distribution of the two target variables (Pharyngo-/oro-cutaneous fistula and Nosocomial infection) in the dataset after removed the samples with missing target value. This highlights the strong class imbalance, with complications being rare events compared to the majority of cases with no complication.
 
 ![Target Variable Distribution](model_results/plots/target_variable_distribution.png)
 
