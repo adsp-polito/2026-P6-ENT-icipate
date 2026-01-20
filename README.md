@@ -134,16 +134,15 @@ Checkpoints/
 
 The table below summarizes the test set performance of the best models for each complication. All metrics are computed at the optimal threshold selected on the validation set.
 
-| **Target**                    | **Best Model** | **Threshold** | **Accuracy** | **Precision** | **Recall (Sensitivity)** | **F1-score** | **PR-AUC** | **ROC-AUC** |
-|-------------------------------|---------------|---------------|--------------|---------------|-------------------------|--------------|------------|-------------|
-| Pharyngo-/oro-cutaneous fistula | RandomForest  | 0.42          | 0.87         | 0.38          | 0.86                    | 0.52         | 0.33       | 0.87        |
-| Nosocomial infection           | CatBoost      | 0.38          | 0.80         | 0.57          | 0.76                    | 0.65         | 0.60       | 0.80        |
+| **Target**                    | **Best Model** | **Threshold** | **Precision** | **Recall (Sensitivity)** | **F1-score** | **PR-AUC** | **ROC-AUC** |
+|-------------------------------|---------------|---------------|---------------|-------------------------|--------------|------------|-------------|
+| Pharyngo-/oro-cutaneous fistula | RandomForest  | 0.42          | 0.38          | 0.86                    | 0.52         | 0.33       | 0.87        |
+| Nosocomial infection           | CatBoost      | 0.38          | 0.57          | 0.76                    | 0.65         | 0.60       | 0.80        |
 
 **Metric definitions:**
-- **Accuracy:** Overall proportion of correct predictions.
-- **Precision:** Proportion of predicted complications that are true (controls false positives).
+- **Precision (positive class):** Proportion of predicted complications that are true (controls false positives).
 - **Recall (Sensitivity):** Proportion of true complications correctly identified (minimizes false negatives).
-- **F1-score:** Harmonic mean of precision and recall for the positive class.
+- **F1-score (postive class):** Harmonic mean of precision and recall for the positive class.
 - **PR-AUC:** Area under the Precision-Recall curve, primary metric for imbalanced data.
 - **ROC-AUC:** Area under the ROC curve, overall discrimination ability.
 
